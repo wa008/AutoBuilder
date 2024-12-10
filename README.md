@@ -2,9 +2,9 @@
 AutoBuilder can help you to build static websites automatically. It can program, build, display, update with screen shot, what developer need to do is check and test the product of website and provide feedback to make product better.
 
 Example:
+<img width="1599" alt="WeChat0195291887835a564dd9950966644b57" src="https://github.com/user-attachments/assets/2ff641d5-8690-4479-9675-1e1da50b765e">
 
-
-This is my side project, welcome advce. 
+Welcome suggestions!
 
 ## How to use
 Steps
