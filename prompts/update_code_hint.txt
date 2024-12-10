@@ -1,0 +1,29 @@
+Please write HTML, CSS, and JavaScript code to achieve the given goal. Structure your output as follows:
+1. The first part should be a plain text answer, which split with second part with "-------------------"
+2. The second part should contain the code. Separate the sections of different files with a single line marked "-------------------".
+3. For each file section:
+	3.1 The first line should display only the file name, without any extra text or symbols (e.g., no ** or code block markers).
+	3.2 The following lines should consist of the raw content of the file, such as code, without comments, syntax tips, or additional formatting.
+4. Do not include any blank lines before or after the separator line.
+5. Avoid summaries, notes, or any content that is not part of the file's raw code.
+For example, you can output:
+xxxxxxxxx
+-------------------
+index.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>index</title>
+</head>
+<body>
+
+<h1>This is first title</h1>
+<p id="date">This is a date demo</p>
+
+</body>
+</html>
+-------------------
+script.js
+function displayDate() {
+	document.getElementById("date").innerHTML=Date();
+}

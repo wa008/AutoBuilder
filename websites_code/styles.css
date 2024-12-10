@@ -1,0 +1,83 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 250px;
+    position: sticky;
+    top: 20px;
+    height: max-content;
+    margin-left: 20px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.two-lines textarea {
+    flex: 1;
+    height: 40px;
+    resize: both;
+}
+
+label {
+    margin-right: 10px;
+    min-width: 100px;
+}
+
+span {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.font-samples {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.font-samples p {
+    margin: 2px 0;
+    font-size: 14px;
+}
+
+.canvas-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 2;
+    min-width: 500px;
+}
+
+canvas {
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}

@@ -1,0 +1,16 @@
+-- Ensure Google Chrome is running
+tell application "Google Chrome"
+    activate
+end tell
+
+tell application "Google Chrome"
+    if (count of windows) > 0 then
+        tell front window
+            set activeTab to active tab
+            execute active tab javascript "window.location.reload(true);"
+            -- keystroke "r" using {command down, shift down}
+            -- execute activeTab javascript "location.reload(true);"
+            -- reload activeTab
+        end tell
+    end if
+end tell

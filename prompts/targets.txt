@@ -1,0 +1,10 @@
+Our target is to write code to build a static websites, which can product a picture which can be download, it provide following function to user
+1. choose color of background
+2. choose text which display on the picture
+3. change the height and width of image
+In addition, it works offline without any pravicy concerns.
+In terms of the layout
++ width and height are slide rather than number input, which is more friendly for users.
++ No generator button, update image when any option changed
++ Set "This is a demo, welcome advice." as default text
++ Set pink as backgroud color and light green as text color. 

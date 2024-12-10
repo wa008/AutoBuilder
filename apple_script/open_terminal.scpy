@@ -1,0 +1,13 @@
+-- Ensure iTerm is running
+tell application "iTerm"
+    activate
+end tell
+
+-- Use System Events to reposition the window
+tell application "System Events"
+    tell application process "iTerm2"
+        if (count of windows) > 0 then
+            set frontWindow to front window
+        end if
+    end tell
+end tell

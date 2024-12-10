@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Image Generator</h1>
+    <div class="wrapper">
+        <div class="controls">
+            <div class="option">
+                <label for="bgColor">Background Color:</label>
+                <input type="color" id="bgColor" value="#ffc0cb">
+            </div>
+            <div class="option">
+                <label for="textColor">Text Color:</label>
+                <input type="color" id="textColor" value="#90ee90">
+            </div>
+            <div class="option two-lines">
+                <label for="textInput">Text:</label>
+                <textarea id="textInput">This is a demo, welcome advice.</textarea>
+            </div>
+            <div class="option">
+                <label for="widthSlider">Width:</label>
+                <input type="range" id="widthSlider" min="0" max="1000" value="500">
+                <span id="widthValue">500</span>
+            </div>
+            <div class="option">
+                <label for="heightSlider">Height:</label>
+                <input type="range" id="heightSlider" min="0" max="1000" value="500">
+                <span id="heightValue">500</span>
+            </div>
+            <div class="option">
+                <label for="fontSelect">Font:</label>
+                <select id="fontSelect">
+                    <option value="Arial">Arial</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                </select>
+            </div>
+            <div class="font-samples">
+                <p style="font-family:Arial;">Arial</p>
+                <p style="font-family:Verdana;">Verdana</p>
+                <p style="font-family:'Times New Roman';">Times New Roman</p>
+                <p style="font-family:'Courier New';">Courier New</p>
+                <p style="font-family:Georgia;">Georgia</p>
+                <p style="font-family:'Comic Sans MS';">Comic Sans MS</p>
+            </div>
+        </div>
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+            <button id="downloadBtn">Download Image</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

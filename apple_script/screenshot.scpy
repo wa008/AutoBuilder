@@ -1,0 +1,18 @@
+-- Get the file name from the shell
+on run argv
+    -- Use the passed file name or create a default timestamped name
+    if (count of argv) > 0 then
+        set fileName to item 1 of argv
+    end if
+
+    tell application "Google Chrome"
+        activate
+        set chromeBounds to bounds of front window
+    end tell
+
+    -- Build the region string (x, y, width, height) for screencapture
+    set regionString to (item 1 of chromeBounds) & "," & (item 2 of chromeBounds) & "," & (item 3 of chromeBounds - item 1 of chromeBounds) & "," & (item 4 of chromeBounds - item 2 of chromeBounds)
+
+    -- Take the screenshot using the screencapture command with specified bounds
+    do shell script "screencapture -x -R" & regionString & " " & quoted form of fileName
+end run
