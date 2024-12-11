@@ -1,27 +1,26 @@
-import openai
+
 import sys
 import json
 import requests
-from openai import OpenAI
 import base64
 import argparse
-from ollama import chat
-from ollama import ChatResponse
 import os
 from dotenv import load_dotenv
 load_dotenv()
 
 parser = argparse.ArgumentParser(description="Process some arguments.")
-# Add arguments
 parser.add_argument("--project_target", help="Target project identifier or path to process", required=True)
 parser.add_argument("--update_code_hint", help="Hint or flag indicating the need to update the code", required=True)
-parser.add_argument("--attached_code_path", help="Path to the attached code file or directory", required=True)
+parser.add_argument("--backup_path", help="Path to the attached code file or directory", required=True)
 parser.add_argument("--output_path", help="Destination path to save the generated output", required=True)
 parser.add_argument("--model_platform", help="Platform or framework for the model being used", required=True)
 parser.add_argument("--screenshot_file", help="File path to the screenshot for processing or reference", required=True)
 parser.add_argument("--feedback", help="Feedback message or data related to the project", required=True)
-# Parse the arguments
+parser.add_argument("--model", help="model to request", required=True)
 args = parser.parse_args()
+
+if args.model_platform == 'ollama':
+    import ollama
 
 def merge_files_with_filenames(directory_path):
     """
@@ -65,7 +64,7 @@ def openai_request(input_prompt):
       img_b64_str = base64.b64encode(img_file.read()).decode("utf-8")
    url = "https://api.openai.com/v1/chat/completions"
    payload_raw = {
-      "model": "gpt-4o",
+      "model": args.model,
       "messages": [
          {
             "role": "user",
@@ -99,7 +98,7 @@ def zz_openai_request(input_prompt):
       img_b64_str = base64.b64encode(img_file.read()).decode("utf-8")
    url = "https://xiaoai.plus/v1/chat/completions"
    payload_raw = {
-      "model": "gpt-4o",
+      "model": args.model,
       "messages": [
          {
             "role": "user",
@@ -129,7 +128,7 @@ def zz_openai_request(input_prompt):
 
 def ollama_request(input_prompt):
    res = ollama.chat(
-      model="llava:13b",
+      model = args.model,
       messages=[
          {
             'role': 'user',
@@ -143,7 +142,7 @@ def ollama_request(input_prompt):
 
 
 def main():
-   merged_code_string = merge_files_with_filenames(args.attached_code_path)
+   merged_code_string = merge_files_with_filenames(args.backup_path)
    input_prompt = f"{args.project_target}\n\nBased on current code and result, {args.feedback}\n\n{args.update_code_hint}\n\nCurrent code:\n{merged_code_string}"
    # print("print_input_prompt", input_prompt)
 
