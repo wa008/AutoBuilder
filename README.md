@@ -9,6 +9,7 @@ Welcome suggestions!
 
 ## How to use
 Demo video: 
+
 [![AutoBuilder demo](https://img.youtube.com/vi/q0eGBseb8N4/0.jpg)](https://www.youtube.com/watch?v=q0eGBseb8N4)
 
 Supported platform
