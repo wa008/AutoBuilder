@@ -48,6 +48,7 @@ def merge_files_with_filenames(directory_path):
 
 
 def request(input_prompt, model_platform):
+    print ('request to LLM....')
     if model_platform == 'ollama':
         return ollama_request(input_prompt)
     elif model_platform == 'openai':
